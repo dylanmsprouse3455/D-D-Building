@@ -1,0 +1,208 @@
+*{box-sizing:border-box;}
+
+body{
+  margin:0;
+  font-family:system-ui,-apple-system,sans-serif;
+  color:#222;
+  background:#f7f9f8;
+  line-height:1.5;
+}
+
+/* ===== COLORS ===== */
+:root{
+  --green:#2e7d32;
+  --light:#e8f5e9;
+  --dark:#111;
+  --gray:#666;
+}
+
+/* ===== CONTAINER ===== */
+.container{
+  width:92%;
+  max-width:1100px;
+  margin:auto;
+}
+
+/* ===== HEADER ===== */
+header{
+  background:white;
+  border-bottom:1px solid #ddd;
+  position:sticky;
+  top:0;
+  z-index:100;
+}
+
+header .container{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:14px 0;
+}
+
+.logo{
+  font-weight:800;
+  color:var(--green);
+  font-size:20px;
+}
+
+/* ===== NAV ===== */
+nav{
+  display:flex;
+  gap:18px;
+}
+
+nav a{
+  text-decoration:none;
+  color:#333;
+  font-weight:500;
+}
+
+nav a:hover{color:var(--green);}
+
+/* ===== MOBILE MENU ===== */
+.menu-toggle{
+  display:none;
+  font-size:26px;
+  cursor:pointer;
+}
+
+/* ===== BUTTONS ===== */
+.btn{
+  background:var(--green);
+  color:white;
+  padding:14px 20px;
+  border-radius:8px;
+  text-decoration:none;
+  display:inline-block;
+  border:none;
+  font-weight:600;
+}
+
+.btn:hover{opacity:.9;}
+
+/* ===== HERO ===== */
+.hero{
+  background:white;
+  padding:70px 0;
+}
+
+.hero h1{
+  font-size:42px;
+  margin:0 0 10px;
+}
+
+.hero p{
+  color:var(--gray);
+  max-width:520px;
+}
+
+/* ===== SECTIONS ===== */
+.section{
+  padding:60px 0;
+}
+
+.section h2{
+  font-size:30px;
+  margin-bottom:20px;
+}
+
+/* ===== CARDS ===== */
+.cards{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+
+.card{
+  background:white;
+  padding:24px;
+  border-radius:12px;
+  box-shadow:0 4px 12px rgba(0,0,0,.05);
+}
+
+/* ===== GALLERY ===== */
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.gallery div{
+  height:200px;
+  background:#ccc;
+  border-radius:10px;
+}
+
+/* ===== FORM ===== */
+form{
+  max-width:500px;
+}
+
+form input,form textarea{
+  width:100%;
+  padding:14px;
+  margin-top:10px;
+  border-radius:8px;
+  border:1px solid #ccc;
+  font-size:16px;
+}
+
+/* ===== FOOTER ===== */
+footer{
+  background:#111;
+  color:#eee;
+  padding:40px 0;
+  text-align:center;
+  margin-top:40px;
+}
+
+/* =========================
+   RESPONSIVE RULES
+========================= */
+
+/* Tablet */
+@media(max-width:900px){
+  .cards{grid-template-columns:repeat(2,1fr);}
+  .gallery{grid-template-columns:repeat(2,1fr);}
+  .hero h1{font-size:34px;}
+}
+
+/* iPhone */
+@media(max-width:700px){
+
+  .menu-toggle{
+    display:block;
+  }
+
+  nav{
+    position:absolute;
+    top:60px;
+    left:0;
+    right:0;
+    background:white;
+    flex-direction:column;
+    display:none;
+    padding:20px;
+    border-bottom:1px solid #ddd;
+  }
+
+  nav.show{
+    display:flex;
+  }
+
+  .cards{
+    grid-template-columns:1fr;
+  }
+
+  .gallery{
+    grid-template-columns:1fr;
+  }
+
+  .hero{
+    padding:50px 0;
+  }
+
+  .hero h1{
+    font-size:28px;
+  }
+}
